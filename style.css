@@ -1,0 +1,102 @@
+.simon {
+    margin: 50px;
+    width: 200px;
+    height: 200px;
+    transform: rotate(-20deg);
+}
+
+.general {
+    height: 100px;
+    width: 100px;
+    border: 10px solid rgb(45, 39, 39);
+    position: absolute;
+    cursor: pointer;
+}
+
+.green {
+    background-color: #17D06D;
+    border-top-left-radius: 100px;
+}
+
+.red {
+    background-color: #F1452C;
+    border-top-right-radius: 100px;
+    left: 100px;
+
+}
+
+.blue {
+    background-color: #058ADC;
+    border-bottom-right-radius: 100px;
+    top: 100px;
+    left: 100px;
+}
+
+.yellow {
+    background-color: #E8D027;
+    border-bottom-left-radius: 100px;
+    top: 100px;
+}
+
+.center {
+    background-image: radial-gradient(circle at 30.58% 38.79%, #dff6fd 0, #daeef2 12.5%, #d3e2e3 25%, #bfbcbc 50%, #aa979a 75%, #9c848b 100%);
+    height: 80px;
+    width: 80px;
+    border-radius: 100px;
+    z-index: 1;
+    position: absolute;
+    left: 60px;
+    top: 55px;
+    align-items: center;
+    display: flex;
+    justify-content: center; 
+    border: 10px solid rgb(45, 39, 39); 
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.bottom {
+    background-color: rgb(68, 56, 56);
+    width: 223px;
+    height: 223px;
+    border-radius: 250px;
+    left: -1px;
+    top: -2px;
+    position: relative;
+    z-index: -1;
+    border: 5px solid #000;
+}
+.btn {
+    height: 5px;
+    width: 12px;
+    background-color: #058ADC;
+    position: absolute;
+    border:#000 solid 1px;
+    border-radius: 5px;
+    top: 55px;
+}
+
+.btn1 {
+    margin-left: -20px;   
+}
+
+.btn2 {
+    margin-left: 25px;
+}
+
+.red:hover {
+    background-image: radial-gradient(circle at 50% 50%, #ff9939 0, #ff7b38 25%, #f1442c 50%, #d90028 75%, #cd0034 100%);
+}
+
+.green:hover {
+    background-image: radial-gradient(circle at 50% 50%, #c4ee6b 0, #9eec74 20%, #17d06d 50%, #00c36a 60%, #00b86d 70%, #00ac8b 100%);
+}
+
+.blue:hover {
+    background-image: radial-gradient(circle at 50% 50%, #a3d7ff 0, #058adc 50%, #0045a3 100%);
+}
+
+.yellow:hover{
+    background-image: radial-gradient(circle at 50% 50%, #ffffa2 0, #e8d027 50%, #958200 100%);
+}
