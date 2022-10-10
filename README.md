@@ -1,2 +1,2 @@
 # simonCSS
-A simple project of Simon in CSS, it´s funny
+A simple Simon's project in CSS, it's funny 🤪
