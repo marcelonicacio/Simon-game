@@ -1,7 +1,4 @@
 .simon {
-    margin: 50px;
-    width: 200px;
-    height: 200px;
     transform: rotate(-20deg);
 }
 
@@ -42,8 +39,7 @@
     background-image: radial-gradient(circle at 30.58% 38.79%, #dff6fd 0, #daeef2 12.5%, #d3e2e3 25%, #bfbcbc 50%, #aa979a 75%, #9c848b 100%);
     height: 80px;
     width: 80px;
-    border-radius: 100px;
-    z-index: 1;
+    border-radius: 80px;
     position: absolute;
     left: 60px;
     top: 55px;
@@ -63,7 +59,6 @@
     border-radius: 250px;
     left: -1px;
     top: -2px;
-    position: relative;
     z-index: -1;
     border: 5px solid #000;
 }
