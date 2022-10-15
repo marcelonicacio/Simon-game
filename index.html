@@ -6,17 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Simon</title>
+
+    <audio id="clip1">
+        <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"></source>
+    </audio>
+    <audio id="clip2">
+        <source src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"></source>
+    </audio>
+    <audio id="clip3">
+        <source src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"></source>
+    </audio>
+    <audio id="clip4">
+        <source src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></source>
+    </audio>
 </head>
 <body>
     <div class="simon">
-        <div class="general green"></div>
-        <div class="general red"></div>
-        <div class="general blue"></div>
-        <div class="general yellow"></div>
-        <div class="center">
-                <div class="btn btn1"></div>
-                <div class="btn btn2"></div>SIMON</div>
+        <div class="general green" id="green"></div>
+        <div class="general red" id="red"></div>
+        <div class="general blue" id="blue"></div>
+        <div class="general yellow" id="yellow"></div>
+        <div class="center"> 
+            <div>SIMON</div>
+            <div class="btns">
+                  <div>  <button class="btn btn1" id="startBtn"></button>PLAY</div>
+                    <div><input type="checkbox"class="btn btn2" id="btnOn">POWER</div>
+            </div>
+            <div class="counter" id="counterDisplay"></div>
+        </div>
         <div class="bottom"></div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
