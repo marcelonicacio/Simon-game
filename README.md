@@ -1,2 +1,2 @@
-# simonCSS
-A simple Simon's project in CSS, just for fun 🤪
+# Simon Game
+A simple Simon's project just for fun 🤪

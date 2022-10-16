@@ -5,37 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Simon</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <title>Simon Game</title>
+    <script src="https://use.fontawesome.com/6e19e941f6.js"></script>
+    <link href="http://fonts.cdnfonts.com/css/sf-digital-readout" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/gotham-serif-bold" rel="stylesheet">
 
-    <audio id="clip1">
+    <audio id="bip1">
         <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"></source>
     </audio>
-    <audio id="clip2">
+    <audio id="bip2">
         <source src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"></source>
     </audio>
-    <audio id="clip3">
+    <audio id="bip3">
         <source src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"></source>
     </audio>
-    <audio id="clip4">
+    <audio id="bip4">
         <source src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></source>
     </audio>
 </head>
 <body>
-    <div class="simon">
-        <div class="general green" id="green"></div>
-        <div class="general red" id="red"></div>
-        <div class="general blue" id="blue"></div>
-        <div class="general yellow" id="yellow"></div>
-        <div class="center"> 
-            <div>SIMON</div>
-            <div class="btns">
-                  <div>  <button class="btn btn1" id="startBtn"></button>PLAY</div>
-                    <div><input type="checkbox"class="btn btn2" id="btnOn">POWER</div>
+    <header>
+        <nav>
+            <div><h1 class="nameLogo">SIMON SAYS!</h1>
             </div>
-            <div class="counter" id="counterDisplay"></div>
+            <ul>
+                <li>Projects <a href="#"></a></li>
+                <li>Contact <a href="#"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="instructions">
+            <h1 class="name">Instructions</h1>
+            <ol>
+                <li>Press the button <strong>POWER</strong> on the front of the game unit, then press the button <strong>PLAY</strong> to start the game.</li>
+                <li>A color will flash. Repeat the sequence by pressing the same color.</li>
+                <li>The game will continue. After each light sequence that you repeat successfully, a light will be added to the end.</li>
+                <li>When you don't complete a sequence successfully, the SIMON game will display a message <strong>"NO!"</strong>. </li>
+                <li>Try to beat your high score! </li>
+            </ol>
         </div>
-        <div class="bottom"></div>
+        <div class="simon">
+            <div class="general green" id="green"></div>
+            <div class="general red" id="red"></div>
+            <div class="general yellow" id="yellow"></div>
+            <div class="general blue" id="blue"></div>
+            <div class="center">
+                <div class="name">SIMON</div>
+                <div class="btns">
+                    <div><input type="checkbox" class="btn startBtn" id="startBtn">PLAY</div>
+                    <div><input type="checkbox" class="btn onBtn" id="onBtn">POWER</div>
+                </div>
+                <div class="counter" id="counterDisplay"></div>
+            </div>
+            <div class="bottom"></div>
+        </div>   
     </div>
+    <footer><p>Marcelo Nicacio - 2022 </p></footer>
     <script src="script.js"></script>
 </body>
 </html>

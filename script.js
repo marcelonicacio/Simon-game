@@ -1,6 +1,6 @@
 let color = [];
 let player = [];
-let light = [];
+let light;
 let turn;
 let good;
 let compTurn;
@@ -14,26 +14,32 @@ const greenPart = document.querySelector('#green');
 const redPart = document.querySelector('#red');
 const bluePart = document.querySelector('#blue');
 const yellowPart = document.querySelector('#yellow');
-const btnOn = document.querySelector('#btnOn');
+const onBtn = document.querySelector('#onBtn');
 const startBtn = document.querySelector('#startBtn');
 const counter = document.querySelector('#counterDisplay');
 
 
-btnOn.addEventListener('click', (e) => {
-    if (btnOn.checked == true) {
+onBtn.addEventListener('click', (e) => {
+    if (onBtn.checked == true) {
         on = true;
+        counter.innerHTML = ''; 
     } else {
         on = false;
         counter.innerHTML = '';
+        startBtn.style.backgroundImage = "linear-gradient(#058ADC,#058ADC)";
         clearColor();
         clearInterval(intervalId);
-
     }
 });
 
 startBtn.addEventListener('click', (e) => {
-    if (on || win) {
+    if (startBtn.checked == true && on ||  win) {
+        pause = true;
         play();
+
+    } else {
+        startBtn.style.backgroundImage = "linear-gradient(#058ADC,#058ADC)";
+        pause = false;
     }
 });
 
@@ -41,23 +47,23 @@ function play() {
 win = false;
 color = [];
 player = [];
-flash = 0;
+light = 0;
 intervalId = 0;
 turn = 1;
 counter.innerHTML = 1;
 good = true;
 
-for (var i = 0; i < 20; i++){
-color.push(Math.floor(Math.random() * 4) + 1)
+for (let i = 0; i < 20; i++){
+color.push(Math.floor(Math.random() * 4) + 1);
 }
 compTurn = true;
-intervalId = setInterval(gameTurn,800)
+intervalId = setInterval(gameTurn,800);
 }
 
 function gameTurn() {
     on = false;
 
-    if (flash == turn) {
+    if (light == turn) {
         clearInterval(intervalId);
         compTurn = false;
         clearColor();
@@ -66,18 +72,18 @@ function gameTurn() {
     if (compTurn) {
         clearColor();
         setTimeout(() => {
-            if (color[flash] == 1) one();
-            if (color[flash] == 2) two();
-            if (color[flash] == 3) three();
-            if (color[flash] == 4) four();
-            flash++;
+            if (color[light] == 1) one();
+            if (color[light] == 2) two();
+            if (color[light] == 3) three();
+            if (color[light] == 4) four();
+            light++;
         },200);
     }
 }
 
 function one() {
     if (noise) {
-      let audio = document.getElementById("clip1");
+      let audio = document.getElementById("bip1");
       audio.play();
     }
     noise = true;
@@ -86,7 +92,7 @@ function one() {
   
   function two() {
     if (noise) {
-      let audio = document.getElementById("clip2");
+      let audio = document.getElementById("bip2");
       audio.play();
     }
     noise = true;
@@ -95,7 +101,7 @@ function one() {
   
   function three() {
     if (noise) {
-      let audio = document.getElementById("clip3");
+      let audio = document.getElementById("bip3");
       audio.play();
     }
     noise = true;
@@ -104,7 +110,7 @@ function one() {
   
   function four() {
     if (noise) {
-      let audio = document.getElementById("clip4");
+      let audio = document.getElementById("bip4");
       audio.play();
     }
     noise = true;
@@ -126,7 +132,7 @@ function one() {
   }
   
   greenPart.addEventListener('click', (e) => {
-    if (on) {
+    if (on && startBtn.checked == true) {
       player.push(1);
       check();
       one();
@@ -139,7 +145,7 @@ function one() {
   })
   
   redPart.addEventListener('click', (e) => {
-    if (on) {
+    if (on && startBtn.checked == true) {
       player.push(2);
       check();
       two();
@@ -152,7 +158,7 @@ function one() {
   })
   
   yellowPart.addEventListener('click', (e) => {
-    if (on) {
+    if (on && startBtn.checked == true) {
       player.push(3);
       check();
       three();
@@ -165,7 +171,7 @@ function one() {
   })
   
   bluePart.addEventListener('click', (e) => {
-    if (on) {
+    if (on && startBtn.checked == true) {
       player.push(4);
       check();
       four();
@@ -188,19 +194,20 @@ function one() {
     if (good == false) {
       flashColor();
       counter.innerHTML = "NO!";
+         
       setTimeout(() => {
         counter.innerHTML = turn;
         clearColor();
   
         if (pause) {
-          play();
+            startBtn.checked = false;
         } else {
           compTurn = true;
-          flash = 0;
+          light = 0;
           player = [];
           good = true;
           intervalId = setInterval(gameTurn, 800);
-        }
+        } 
       }, 800);
   
       noise = false;
@@ -210,11 +217,10 @@ function one() {
       turn++;
       player = [];
       compTurn = true;
-      flash = 0;
+      light = 0;
       counter.innerHTML = turn;
       intervalId = setInterval(gameTurn, 800);
     }
-  
   }
   
   function winGame() {
